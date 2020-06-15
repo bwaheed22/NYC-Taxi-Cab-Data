@@ -55,14 +55,16 @@ df2 = pd.read_sql(f"SELECT * from yellow_cabs ORDER BY random() LIMIT {1000000-r
     qlow = df.quantile(0.01)
     qhigh = df.quantile(0.99)
     df_out = df.iloc[:,3:25]
+
+    # Cleaned data without outliers:
     df_out = df_out[~((df_out < qlow) |(df_out > qhigh)).any(axis=1)]
 
-    plt.hist(df['payment_type'])
+    plt.hist(df_out['payment_type'])
+    plt.hist(df_out['Borough'])
     plt.show()
 
     sns.distplot(df_out['total_amount'], hist=False)
     sns.distplot(df_out['tip_amount'], hist=False)
     sns.distplot(df_out['trip_distance'], hist=False)
-    plt.xlim(0,500)
 
 
