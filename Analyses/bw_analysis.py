@@ -64,6 +64,7 @@ df2 = pd.read_sql(f"SELECT * from yellow_cabs ORDER BY random() LIMIT {1000000-r
     plt.show()
 
     sns.distplot(df_out['total_amount'], hist=False)
+    sns.distplot(df_out['trip_time'], hist = False)
     sns.distplot(df_out['tip_amount'], hist=False)
     sns.distplot(df_out['trip_distance'], hist=False)
 
