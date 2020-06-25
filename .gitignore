@@ -8,3 +8,6 @@ Data/*.csv
 __pycache__
 .idea/
 venv
+.ipynb_checkpoints
+.DS_Store
+
