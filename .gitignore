@@ -3,7 +3,7 @@
 .RData
 .Ruserdata
 
-Data/*.csv
+
 *.db
 __pycache__
 .idea/
